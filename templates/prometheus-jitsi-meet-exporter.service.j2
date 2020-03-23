@@ -1,0 +1,14 @@
+{{ ansible_managed | comment }}
+
+[Unit]
+Description=Metrics Exporter for Jitsi Meet
+After=network.target
+
+[Service]
+Type=simple
+DynamicUser=yes
+ExecStart=/usr/local/bin/prometheus-jitsi-meet-exporter -videobridge-url {{ prometheus_jitsi_meet_exporter_videobridge_url }} -web.listen-address {{ prometheus_jitsi_meet_exporter_listen }}
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,6 @@
+---
+
+- name: restart prometheus-jitsi-meet-exporter
+  service:
+    name: prometheus-jitsi-meet-exporter
+    state: restarted
