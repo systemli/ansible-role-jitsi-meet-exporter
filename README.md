@@ -8,7 +8,7 @@ Role Variables
 --------------
 
 ```
-prometheus_jitsi_meet_exporter_version: 1.1.0
+prometheus_jitsi_meet_exporter_version: 1.1.2
 prometheus_jitsi_meet_exporter_videobridge_url: http://localhost:8888/stats
 prometheus_jitsi_meet_exporter_listen: :9888
 ```
