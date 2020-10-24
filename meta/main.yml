@@ -18,7 +18,7 @@ galaxy_info:
         - stretch
         - buster
     - name: Ubuntu
-      version:
+      versions:
         - focal
         - bionic
         - xenial
