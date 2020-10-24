@@ -17,6 +17,11 @@ galaxy_info:
       versions:
         - stretch
         - buster
+    - name: Ubuntu
+      version:
+        - focal
+        - bionic
+        - xenial
   notifications:
     webhooks: https://galaxy.ansible.com/api/v1/notifications/
 dependencies: []
