@@ -5,8 +5,7 @@
 
 This role installs and configure a prometheus metrics exporter for [Jitsi Meet](https://jitsi.org/jitsi-meet/).
 
-Role Variables
---------------
+## Role Variables
 
 ```
 prometheus_jitsi_meet_exporter_version: 1.1.3
@@ -14,15 +13,13 @@ prometheus_jitsi_meet_exporter_videobridge_url: http://localhost:8888/stats
 prometheus_jitsi_meet_exporter_listen: :9888
 ```
 
-Download
---------
+## Download
 
 Download latest release with `ansible-galaxy`
 
 	ansible-galaxy install systemli.jitsi_meet_exporter
 
-Example Playbook
-----------------
+## Example Playbook
 
 ```
 - hosts: jitsimeetservers
@@ -30,24 +27,24 @@ Example Playbook
      - { role: systemli.jitsi_meet_exporter }
 ```
 
-Tests
------
+## Testing & Development
 
-For developing and testing the role we use Travis CI, Molecule and Vagrant. On the local environment you can easily test the role with
+### Tests
+
+For developing and testing the role we use Github Actions, Molecule, and Vagrant. On the local environment you can easily test the role with
+
+Run local tests with:
 
 ```
-pip install molecule-vagrant ansible-lint yamllint
 molecule test
 ```
 
-This requires [Vagrant](https://www.vagrantup.com/downloads.html) to be installed.
+Requires Molecule, Vagrant and `python-vagrant` to be installed.For developing and testing the role we use Travis CI, Molecule and Vagrant. On the local environment you can easily test the role with
 
-License
--------
+## License
 
 GPLv3
 
-Author Information
-------------------
+## Author Information
 
 https://www.systemli.org
