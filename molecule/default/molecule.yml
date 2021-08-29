@@ -6,6 +6,8 @@ driver:
 platforms:
   - name: buster64-jitsi-meet
     box: debian/buster64
+  - name: bullseye-jitsi-meet
+    box: debian/bullseye64
 provisioner:
   name: ansible
   become: True
