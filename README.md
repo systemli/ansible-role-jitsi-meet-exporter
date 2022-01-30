@@ -1,6 +1,6 @@
 # Ansible role to install and configure Jitsi Meet Exporter
 
-![Integration](https://github.com/systemli/ansible-role-jitsi-meet-exporter/workflows/Integration/badge.svg?branch=master)
+![Integration](https://github.com/systemli/ansible-role-jitsi-meet-exporter/workflows/Integration/badge.svg?branch=main)
 [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-jitsi_meet_exporter-blue.svg)](https://galaxy.ansible.com/systemli/jitsi_meet_exporter/)
 
 This role installs and configure a prometheus metrics exporter for [Jitsi Meet](https://jitsi.org/jitsi-meet/).
