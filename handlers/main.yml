@@ -1,5 +1,10 @@
 ---
 
+- name: reload systemd and restart prometheus-jitis-meet-exporter
+  systemd:
+    daemon_reload: yes
+  notify: restart prometheus-jitsi-meet-exporter
+
 - name: restart prometheus-jitsi-meet-exporter
   service:
     name: prometheus-jitsi-meet-exporter

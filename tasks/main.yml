@@ -39,13 +39,10 @@
     owner: root
     group: root
     mode: 0644
-  register: jitsi_meet_exporter_systemd
-  notify: restart prometheus-jitsi-meet-exporter
+  notify: reload systemd and restart prometheus-jitsi-meet-exporter
 
-- name: Reload systemd daemon
-  systemd:
-    daemon_reload: yes
-  when: jitsi_meet_exporter_systemd is changed
+- name: Flush handlers
+  meta: flush_handlers
 
 - name: Enable prometheus-jitsi-meet-exporter service
   service:
