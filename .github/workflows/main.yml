@@ -1,8 +1,11 @@
 ---
 name: Integration
+
 on:
-  pull_request:
   push:
+    branches:
+      - main
+  pull_request_target:
   schedule:
     # * is a special character in YAML so you have to quote this string
     # first of each month

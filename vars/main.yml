@@ -1,7 +1,7 @@
 ---
-prometheus_jitsi_meet_exporter_checksum_url: https://github.com/systemli/prometheus-jitsi-meet-exporter/releases/download/{{ prometheus_jitsi_meet_exporter_version }}/sha512sums.txt
-prometheus_jitsi_meet_exporter_download_url: https://github.com/systemli/prometheus-jitsi-meet-exporter/releases/download/{{ prometheus_jitsi_meet_exporter_version }}/prometheus-jitsi-meet-exporter-linux-{{ go_arch_map[ansible_architecture] | d(ansible_architecture) }}
-prometheus_jitsi_meet_exporter_tmp_file: /tmp/prometheus-jitsi-meet-exporter-linux-{{ go_arch_map[ansible_architecture] | d(ansible_architecture) }}
+prometheus_jitsi_meet_exporter_checksum_url: https://github.com/systemli/prometheus-jitsi-meet-exporter/releases/download/{{ prometheus_jitsi_meet_exporter_version }}/checksums.txt
+prometheus_jitsi_meet_exporter_download_url: https://github.com/systemli/prometheus-jitsi-meet-exporter/releases/download/{{ prometheus_jitsi_meet_exporter_version }}/prometheus-jitsi-meet-exporter_{{ prometheus_jitsi_meet_exporter_version }}_linux_{{ go_arch_map[ansible_architecture] | d(ansible_architecture) }}.tar.gz
+prometheus_jitsi_meet_exporter_tmp_file: /tmp/prometheus-jitsi-meet-exporter_{{ prometheus_jitsi_meet_exporter_version }}_linux_{{ go_arch_map[ansible_architecture] | d(ansible_architecture) }}.tar.gz
 
 go_arch_map:
   i386: '386'
