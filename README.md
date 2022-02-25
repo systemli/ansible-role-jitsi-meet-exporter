@@ -8,7 +8,7 @@ This role installs and configure a prometheus metrics exporter for [Jitsi Meet](
 ## Role Variables
 
 ```
-prometheus_jitsi_meet_exporter_version: 1.1.3
+prometheus_jitsi_meet_exporter_version: 1.1.9
 prometheus_jitsi_meet_exporter_videobridge_url: http://localhost:8080/colibri/stats
 prometheus_jitsi_meet_exporter_listen: :9888
 ```
