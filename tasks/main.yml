@@ -17,6 +17,7 @@
     url: "{{ prometheus_jitsi_meet_exporter_download_url }}"
     dest: "{{ prometheus_jitsi_meet_exporter_tmp_file }}"
     checksum: "sha256:{{ exporter_checksum }}"
+    mode: 0644
   register: _download_binary
   check_mode: false
 
