@@ -1,0 +1,19 @@
+---
+name: Integration
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    # first of each month
+    - cron: '0 0 1 * *'
+
+jobs:
+  integration:
+    name: Integration
+    uses: ./.github/workflows/workflow_integration.yml
+    secrets:
+      galaxy-token: ${{ secrets.galaxy_api_key }}
