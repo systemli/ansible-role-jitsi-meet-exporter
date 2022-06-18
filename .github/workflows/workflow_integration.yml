@@ -19,7 +19,7 @@ on:
         description: 'Default pip dependencies for molecule'
         type: string
         default: |
-          molecule[docker]
+          molecule[docker]==3.6.1
           molecule-goss
       molecule-config:
         required: false
