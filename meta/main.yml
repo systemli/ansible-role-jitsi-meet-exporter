@@ -19,6 +19,7 @@ galaxy_info:
         - bullseye
     - name: Ubuntu
       versions:
+        - jammy
         - focal
         - bionic
         - xenial
