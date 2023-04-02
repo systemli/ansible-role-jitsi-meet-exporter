@@ -5,7 +5,7 @@
     _checksums: "{{ lookup('url', prometheus_jitsi_meet_exporter_checksum_url, wantlist=True) | list }}"
   run_once: true
 
-- name: "Get checksum for {{ go_arch_map[ansible_architecture] | default(ansible_architecture) }} architecture"
+- name: "Get checksum for architecture {{ go_arch_map[ansible_architecture] | default(ansible_architecture) }}"
   set_fact:
     exporter_checksum: "{{ item.split(' ')[0] }}"
   with_items: "{{ _checksums }}"
@@ -26,7 +26,7 @@
     src: "{{ prometheus_jitsi_meet_exporter_tmp_file }}"
     dest: "/usr/local/bin"
     remote_src: yes
-  notify: restart prometheus-jitsi-meet-exporter
+  notify: Restart prometheus-jitsi-meet-exporter
 
 - name: Copy prometheus-jitsi-meet-exporter systemd unit
   template:
@@ -35,7 +35,7 @@
     owner: root
     group: root
     mode: 0644
-  notify: reload systemd and restart prometheus-jitsi-meet-exporter
+  notify: Reload systemd and restart prometheus-jitsi-meet-exporter
 
 - name: Flush handlers
   meta: flush_handlers
