@@ -5,7 +5,7 @@ galaxy_info:
   description: Install and maintain prometheus metrics exporter for Jitsi Meet.
   company: systemli.org
   license: GPLv3
-  min_ansible_version: 2.2
+  min_ansible_version: "2.2"
   galaxy_tags:
     - networking
     - jitsi
@@ -23,6 +23,4 @@ galaxy_info:
         - focal
         - bionic
         - xenial
-  notifications:
-    webhooks: https://galaxy.ansible.com/api/v1/notifications/
 dependencies: []
