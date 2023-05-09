@@ -1,11 +1,10 @@
 ---
-
 - name: Reload systemd and restart prometheus-jitsi-meet-exporter
-  systemd:
+  ansible.builtin.systemd:
     daemon_reload: yes
   notify: Restart prometheus-jitsi-meet-exporter
 
 - name: Restart prometheus-jitsi-meet-exporter
-  service:
+  ansible.builtin.service:
     name: prometheus-jitsi-meet-exporter
     state: restarted
