@@ -1,19 +1,18 @@
 ---
-
 - name: Get checksums from github.com
-  set_fact:
+  ansible.builtin.set_fact:
     _checksums: "{{ lookup('url', prometheus_jitsi_meet_exporter_checksum_url, wantlist=True) | list }}"
   run_once: true
 
 - name: "Get checksum for architecture {{ go_arch_map[ansible_architecture] | default(ansible_architecture) }}"
-  set_fact:
+  ansible.builtin.set_fact:
     exporter_checksum: "{{ item.split(' ')[0] }}"
   with_items: "{{ _checksums }}"
   when: "('linux_' + (go_arch_map[ansible_architecture] | default(ansible_architecture))) in item"
 
 - name: Ensure prometheus-jitsi-meet-exporter binary is downloaded
   become: false
-  get_url:
+  ansible.builtin.get_url:
     url: "{{ prometheus_jitsi_meet_exporter_download_url }}"
     dest: "{{ prometheus_jitsi_meet_exporter_tmp_file }}"
     checksum: "sha256:{{ exporter_checksum }}"
@@ -22,14 +21,14 @@
   check_mode: false
 
 - name: Extract the archive
-  unarchive:
+  ansible.builtin.unarchive:
     src: "{{ prometheus_jitsi_meet_exporter_tmp_file }}"
     dest: "/usr/local/bin"
     remote_src: yes
   notify: Restart prometheus-jitsi-meet-exporter
 
 - name: Copy prometheus-jitsi-meet-exporter systemd unit
-  template:
+  ansible.builtin.template:
     src: prometheus-jitsi-meet-exporter.service.j2
     dest: /etc/systemd/system/prometheus-jitsi-meet-exporter.service
     owner: root
@@ -38,10 +37,10 @@
   notify: Reload systemd and restart prometheus-jitsi-meet-exporter
 
 - name: Flush handlers
-  meta: flush_handlers
+  ansible.builtin.meta: flush_handlers
 
 - name: Enable prometheus-jitsi-meet-exporter service
-  service:
+  ansible.builtin.service:
     name: prometheus-jitsi-meet-exporter
     state: started
     enabled: yes
