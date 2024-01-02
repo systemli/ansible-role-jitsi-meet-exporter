@@ -7,7 +7,7 @@ This role installs and configure a prometheus metrics exporter for [Jitsi Meet](
 
 ## Role Variables
 
-```
+```yaml
 prometheus_jitsi_meet_exporter_version: 1.1.9
 prometheus_jitsi_meet_exporter_videobridge_url: http://localhost:8080/colibri/stats
 prometheus_jitsi_meet_exporter_listen: :9888
@@ -17,11 +17,13 @@ prometheus_jitsi_meet_exporter_listen: :9888
 
 Download latest release with `ansible-galaxy`
 
-	ansible-galaxy install systemli.jitsi_meet_exporter
+```shell
+ansible-galaxy install systemli.jitsi_meet_exporter
+```
 
 ## Example Playbook
 
-```
+```yaml
 - hosts: jitsimeetservers
   roles:
      - { role: systemli.jitsi_meet_exporter }
@@ -35,7 +37,7 @@ For developing and testing the role we use Github Actions, Molecule, and Vagrant
 
 Run local tests with:
 
-```
+```shell
 molecule test
 ```
 
@@ -47,4 +49,4 @@ GPLv3
 
 ## Author Information
 
-https://www.systemli.org
+<https://www.systemli.org>
