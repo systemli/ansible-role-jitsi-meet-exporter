@@ -15,12 +15,10 @@ galaxy_info:
   platforms:
     - name: Debian
       versions:
-        - buster
         - bullseye
+        - bookworm
     - name: Ubuntu
       versions:
         - jammy
         - focal
-        - bionic
-        - xenial
 dependencies: []
