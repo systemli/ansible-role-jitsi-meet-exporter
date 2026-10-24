@@ -17,10 +17,3 @@ provisioner:
   name: ansible
   ansible_args:
     - --diff
-
-dependency:
-  name: galaxy
-  options:
-    requirements-file: requirements.yml
-
-lint: yamllint .
