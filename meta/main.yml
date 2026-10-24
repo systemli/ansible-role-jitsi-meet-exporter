@@ -5,7 +5,7 @@ galaxy_info:
   description: Install and maintain prometheus metrics exporter for Jitsi Meet.
   company: systemli.org
   license: GPLv3
-  min_ansible_version: "2.2"
+  min_ansible_version: "2.14"
   galaxy_tags:
     - networking
     - jitsi
@@ -20,5 +20,4 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - jammy
-        - focal
 dependencies: []
