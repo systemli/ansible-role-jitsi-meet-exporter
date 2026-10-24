@@ -9,14 +9,11 @@ argument_specs:
         type: str
         description:
           - Version of the exporter to install.
-        default: 1.4.1
       prometheus_jitsi_meet_exporter_videobridge_url:
         type: str
         description:
           - URL of the Jitsi Videobridge colibri stats endpoint.
-        default: http://localhost:8080/colibri/stats
       prometheus_jitsi_meet_exporter_listen:
         type: str
         description:
           - Listen address of the exporter.
-        default: ":9888"
