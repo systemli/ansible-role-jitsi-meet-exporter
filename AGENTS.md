@@ -11,8 +11,7 @@ Ansible role that installs and configures the Prometheus Jitsi Meet exporter (sy
 
 ## Checks
 
-- `yamllint .` must pass (config in `.yamllint`)
-- `ansible-lint .` should not report new findings; it creates `.ansible/`, never commit it
+- `ansible-lint` must pass with the default configuration (no repo-specific config); it creates `.ansible/`, never commit it
 - `molecule test` runs the role in a container; CI runs it via `.github/workflows/main.yml`
 
 ## Conventions
