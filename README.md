@@ -1,9 +1,9 @@
 # Ansible role to install and configure Jitsi Meet Exporter
 
-![Integration](https://github.com/systemli/ansible-role-jitsi-meet-exporter/workflows/Integration/badge.svg?branch=main)
+[![Integration](https://github.com/systemli/ansible-role-jitsi-meet-exporter/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/systemli/ansible-role-jitsi-meet-exporter/actions/workflows/main.yml)
 [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-jitsi_meet_exporter-blue.svg)](https://galaxy.ansible.com/systemli/jitsi_meet_exporter/)
 
-This role installs and configure a prometheus metrics exporter for [Jitsi Meet](https://jitsi.org/jitsi-meet/).
+This role installs and configures a prometheus metrics exporter for [Jitsi Meet](https://jitsi.org/jitsi-meet/).
 
 ## Role Variables
 
@@ -33,15 +33,15 @@ ansible-galaxy install systemli.jitsi_meet_exporter
 
 ### Tests
 
-For developing and testing the role we use Github Actions, Molecule, and Vagrant. On the local environment you can easily test the role with
+For developing and testing the role we use GitHub Actions and Molecule with the Docker driver. CI runs the role on Debian 13 and 12 and Ubuntu 22.04 and 20.04 (see `.github/workflows/main.yml`).
 
-Run local tests with:
+To test the role locally, install Docker (or a compatible runtime), `molecule` and `molecule-plugins[docker]`, then run:
 
 ```shell
 molecule test
 ```
 
-Requires Molecule, Vagrant and `python-vagrant` to be installed.For developing and testing the role we use Travis CI, Molecule and Vagrant. On the local environment you can easily test the role with
+Use `molecule converge` to apply the role to a container and `molecule login` to inspect it. The local scenario in `molecule/default/` uses Debian 13.
 
 ## License
 
