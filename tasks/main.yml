@@ -16,7 +16,7 @@
     url: "{{ prometheus_jitsi_meet_exporter_download_url }}"
     dest: "{{ prometheus_jitsi_meet_exporter_tmp_file }}"
     checksum: "sha256:{{ exporter_checksum }}"
-    mode: 0644
+    mode: "0644"
   register: _download_binary
   check_mode: false
 
@@ -24,7 +24,7 @@
   ansible.builtin.unarchive:
     src: "{{ prometheus_jitsi_meet_exporter_tmp_file }}"
     dest: "/usr/local/bin"
-    remote_src: yes
+    remote_src: true
   notify: Restart prometheus-jitsi-meet-exporter
 
 - name: Copy prometheus-jitsi-meet-exporter systemd unit
@@ -33,7 +33,7 @@
     dest: /etc/systemd/system/prometheus-jitsi-meet-exporter.service
     owner: root
     group: root
-    mode: 0644
+    mode: "0644"
   notify: Reload systemd and restart prometheus-jitsi-meet-exporter
 
 - name: Flush handlers
@@ -43,4 +43,4 @@
   ansible.builtin.service:
     name: prometheus-jitsi-meet-exporter
     state: started
-    enabled: yes
+    enabled: true
